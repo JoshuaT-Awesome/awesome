@@ -18,7 +18,9 @@
                     <li> <a href="test">Test Page</a>
                     <li> <a href="/">Home</a>
                 </ul>
+
                 <img src="/images/me.jpg">
+                
                 </div> 
             </div>
         </div>

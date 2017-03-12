@@ -1,5 +1,4 @@
 
-
-<a class="button" type="submit" data-page-name= "{{ $pageName  }}">
-	<i class="fa fa-car"></i>{{ $text }}
+<a class="btn btn-default " data-page-name= "{{ $pageName  }}"href="#">
+  <i class="fa fa-fort-awesome fa-2x"></i>  {{ $text }}
 </a>
