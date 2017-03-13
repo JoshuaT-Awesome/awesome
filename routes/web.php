@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::resource('photos', 'PhotoController');
 
+Route::resource('contact', 'ContactController');
+
 Route::get('test', function () {
     return view('test');
 });

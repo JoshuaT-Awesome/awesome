@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 
 
-        <div class="flex-center position-ref full-height">
+       
 
             <div class="content">
                 <div class="title m-b-md">
@@ -9,19 +9,21 @@
                 </div>
 
                 <div class="links">
-                <ul>
-                   <li> <a href="">Developer</a>
-                    <li><a href="https://laracasts.com">Website Hosting</a>
-                    <li><a href="https://laravel-news.com">Search Engine Optimization</a>
-                    <li><a href="https://forge.laravel.com">Website Design</a>
-                    <li><a href="https://github.com/laravel/laravel">'80s Trivia Nerd</a>
-                    <li> <a href="test">Test Page</a>
-                    <li> <a href="/">Home</a>
+                <ul class="fa-ul">
+                   <li> <i class="fa-li fa fa-coffee"></i><a href="">Developer</a>
+                    <li><i class="fa-li fa fa-server"></i><a href="https://laracasts.com">Website Hosting</a>
+                    <li><i class="fa-li fa fa-desktop"></i><a href="https://laravel-news.com">Search Engine Optimization</a>
+                    <li><i class="fa-li fa fa-check-square"></i><a href="https://forge.laravel.com">Website Design</a>
+                    <li><i class="fa-li fa fa-check-square"></i><a href="https://github.com/laravel/laravel">'80s Trivia Nerd</a>
+                    <li> <i class="fa-li fa fa-check-square"></i><a href="test">Test Page</a>
+                    <li> <i class="fa-li fa fa-check-square"></i><a href="/">Home</a>
+                    <li> <i class="fa-li fa fa-check-square"></i><a href="contact">Contact</a>
                 </ul>
+                    <div class="me">
+                        <img src="/images/me.jpg">
+                    </div>
 
-                <img src="/images/me.jpg">
-                
                 </div> 
-            </div>
-        </div>
+            </div> <!-- content -->
+
  

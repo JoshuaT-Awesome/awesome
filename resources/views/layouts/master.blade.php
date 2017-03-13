@@ -68,8 +68,7 @@
 
             .links {
                 display:flex;
-                justify-content: flex-start;
-                
+                justify-content: center;
             }
 
             .m-b-md {
@@ -78,14 +77,12 @@
 
             .me {
                 display:flex;
-                padding-left: 8em;
-                justify-content: flex-end;
-                height: 400px;
+          padding-left: 8em;
             }
 
-            .btn {display: block;
+            .btn {display: inline-flex;
                 height: 75px;
-                width: 200px;
+                width:225px;
                 background: cyan;
                 border: 2px solid rgba(33, 68, 72, 0.59);
                 color: rgba(0, 0, 0, 0.55);
@@ -102,8 +99,10 @@
             <div class="content">
                 @yield('content')
             </div>
-        </div>
-        @show
+               @show
 
+       
+        </div>
+ @include('footer')
     </body>
 </html>
