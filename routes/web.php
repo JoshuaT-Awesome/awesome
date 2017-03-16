@@ -22,3 +22,20 @@ Route::resource('contact', 'ContactController');
 Route::get('test', function () {
     return view('test');
 });
+
+Route::resource('trivia', 'TriviaController');
+
+Route::resource('ancient', 'AncientController');
+
+
+// POSTS
+Route::get('posts', 'PostsController@index');
+Route::get('/posts/create', 'PostsController@create');
+Route::post('/posts', 'PostsController@store');
+Route::get('/posts/{post}', 'PostsController@show');
+
+
+
+
+
+

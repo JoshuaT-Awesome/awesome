@@ -49,6 +49,7 @@
 
             .content {
                 text-align: center;
+
             }
 
             .title {
@@ -82,7 +83,7 @@
 
             .btn {display: inline-flex;
                 height: 75px;
-                width:225px;
+                width:125px;
                 background: cyan;
                 border: 2px solid rgba(33, 68, 72, 0.59);
                 color: rgba(0, 0, 0, 0.55);
@@ -94,15 +95,13 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-
+        <div class="flex-center position-ref full-height">  
             <div class="content">
                 @yield('content')
             </div>
                @show
-
-       
+               <!-- @include('sidebar') -->
         </div>
- @include('footer')
+         @include('footer')
     </body>
 </html>
