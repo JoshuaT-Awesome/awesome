@@ -41,7 +41,7 @@ CREATE A NEW POST.
   </div>
 
 </form>
-
+ 
 	@include('layouts.errors')
 
 @endsection

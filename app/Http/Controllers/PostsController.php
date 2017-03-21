@@ -15,7 +15,8 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'DESC')
+        ->simplePaginate(3);
 
         return view('layouts.posts.index', compact('posts'));
     }

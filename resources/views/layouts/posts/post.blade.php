@@ -4,7 +4,7 @@
 
 		 <a href="/posts/{{  $post->id  }}">  
 
-			{{  $post->title  }}
+		{{  $post->title  }}
 
 		</a>
 	</h2>
@@ -18,3 +18,4 @@
 	{{  $post->body  }}
 
 </div>
+

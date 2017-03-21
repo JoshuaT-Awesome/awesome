@@ -9,4 +9,6 @@
 			@include ('layouts.posts.post')
 
 		@endforeach
+
+		{{ $posts->links() }}
 @endsection

@@ -1,11 +1,16 @@
 @extends('layouts.master')
-
+<a href="/">Home</a>
 
 
 @section ('content')
+	<h2 class="blog-post-title">
+	{{  $post->title  }}
+	</h2>
 
-	<h1>{{  $post->title  }}</h1>
-	{{  $post->body }}
+
+	{{  $post->created_at->toFormattedDateString() }}<br><br>
+
+	<p>{{  $post->body }}</p>
 
 @endsection
 
