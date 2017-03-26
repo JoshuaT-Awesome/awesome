@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,11 +34,24 @@ Route::get('/posts/create', 'PostsController@create');
 Route::post('/posts', 'PostsController@store');
 Route::get('/posts/{post}', 'PostsController@show');
 
+/*
+Route::post('/posts/files', function()  {
+
+	request()->file('blog_image')->store('public'); //storage/app/public
+
+	return view('welcome');
+
+});
+
+Route::post('/posts', function (Request $request) {
+
+	var_dump($request->all());
+}
+
+	);
+*/
 
 
-
-
-
-
+Route::resource('stats', 'StatController');
 
 

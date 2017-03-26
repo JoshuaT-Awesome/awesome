@@ -12,6 +12,7 @@
 	<div class="content" data-page-name="{{  $pageName  }}">
 	<p>sign up: <strong>It's awesome!</strong></p>
 @include('sign-up-button', ['text' => 'CLICK HERE.'])
-	</div>
+	</div><br><br>
+
 @endsection
 

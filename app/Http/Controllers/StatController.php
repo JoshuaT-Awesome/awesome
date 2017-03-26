@@ -3,22 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
+use Illuminate\Support\Facades\DB;
+use App\Stat;
 
-class PostsController extends Controller
+class StatController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
 
-        $posts = Post::orderBy('id', 'DESC')
-        ->simplePaginate(3);
 
-        return view('layouts.posts.index', compact('posts'));
+
+        $stats = Stat::all();
+
+        return view('layouts.stats.index', compact('stats'));
+
     }
 
     /**
@@ -28,7 +33,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('layouts.posts.create');
+         return view('layouts.stats.create');
     }
 
     /**
@@ -38,30 +43,15 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store()
-
     {
-/*
-        if (request()->has('blog_image')) {
-    request()->file('blog_image')->store('public');
-}
-*/
-            
-        $this->validate(request(),  [
-
-            'title' => 'required',
-            'body' => 'required'
-        ]);
-
-
-            // Create a new post using the request data
-        Post::create(request(['title', 'body' ]));
+            // Create a new stat using the request data
+        Stat::create(request(['stats' ]));
 
 
         // Save it to the database
 
         //  And then redirect to the home page.
-        return redirect('/posts');
-
+        return redirect('/stats');
     }
 
     /**
@@ -70,12 +60,22 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Stat $stats)
     {
+       /* $stats = Stat::find($stats);
+        return $stats;
+*/
+        //Stat::find(wildcard)
+         $stats = DB::table('stats')
+         ->count();
 
-        return view('layouts.posts.show', compact('post'));
+
+        //return view('layouts.stats.show', compact('stats'));
+        return view('layouts.stats.show',  ['stats' => $stats]);
     }
+ 
 
+  
     /**
      * Show the form for editing the specified resource.
      *

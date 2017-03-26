@@ -17,5 +17,7 @@
 
 	{{  $post->body  }}
 
+{{  $post->blog_images }}
+
 </div>
 

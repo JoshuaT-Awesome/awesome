@@ -4,7 +4,7 @@
 @section('content')
 CREATE A NEW POST.
 
-<form method="POST" action="/posts">
+<form method="POST" action="/posts" enctype="multipart/form-data">
 
 	{{  csrf_field()  }}
 
@@ -30,7 +30,7 @@ CREATE A NEW POST.
 
     <label for="exampleInputFile">File input</label>
 
-    <input type="file" id="exampleInputFile">
+    <input type="file" name="blog_image" id="exampleInputFile">
 
     <p class="help-block">Example block-level help text here.</p>
 

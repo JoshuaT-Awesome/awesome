@@ -19,6 +19,7 @@
                     <li> <i class="fa-li fa fa-camera-retro"></i><a href="/">Gallery</a>
                     <li> <i class="fa-li fa fa-empire"></i><a href="posts/create">Create Posts</a>
                     <li> <i class="fa-li fa fa-camera"></i><a href="posts">View Posts</a>
+                    <li> <i class="fa-li fa fa-rocket"></i><a href="stats">Stats</a>
 
                 </ul>
                     <div class="me">
