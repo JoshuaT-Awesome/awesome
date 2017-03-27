@@ -45,7 +45,7 @@ class StatController extends Controller
     public function store()
     {
             // Create a new stat using the request data
-        Stat::create(request(['stats' ]));
+        Stat::create(request(['id' ]));
 
 
         // Save it to the database
@@ -60,18 +60,31 @@ class StatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Stat $stats)
+    public function show(Stat $stat)
     {
        /* $stats = Stat::find($stats);
         return $stats;
 */
         //Stat::find(wildcard)
-         $stats = DB::table('stats')
+         /*$foo = DB::table('stats')
          ->count();
 
+         $users = DB::table('stats')
+         ->get();
 
+
+         $bar = array(
+            'foo' => $foo,
+            'users' => $users, 
+            
+            );
+                 */
+         $stats = Stat::all();
+          
+
+  
         //return view('layouts.stats.show', compact('stats'));
-        return view('layouts.stats.show',  ['stats' => $stats]);
+        return view('layouts.stats.show',  compact('stat'));
     }
  
 

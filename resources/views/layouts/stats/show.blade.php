@@ -9,7 +9,12 @@ not sure.
 
 
 <br><br>
-There are {{  $stats }} entries.
+
+		
+			ID: {{ $stat->id}} <br>
+			Speed:{{$stat->speed}}<br><br>
+
+
 
 @endsection
 
