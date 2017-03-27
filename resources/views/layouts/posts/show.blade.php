@@ -12,6 +12,10 @@
 
 	<p>{{  $post->body }}</p>
 
+
+
+
+
 @endsection
 
 

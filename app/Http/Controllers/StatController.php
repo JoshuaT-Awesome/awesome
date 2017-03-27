@@ -80,6 +80,7 @@ class StatController extends Controller
             );
                  */
          $stats = Stat::all();
+
           
 
   
@@ -97,7 +98,17 @@ class StatController extends Controller
      */
     public function edit($id)
     {
-        //
+        // get the id
+        $stat = Stat::find($id);
+
+        $speed = DB::table('stats')
+        ->where('id', $id)
+        ->increment('speed', 5);
+  
+
+        // show the edit form and pass the id
+        return View('layouts.stats.edit')
+            ->with('stat', $stat);
     }
 
     /**
