@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Http\Request;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +21,26 @@ Route::resource('photos', 'PhotoController');
 
 Route::resource('contact', 'ContactController');
 
+
+//TEST
 Route::get('test', function () {
     return view('test');
 });
 
-Route::resource('trivia', 'TriviaController');
+Route::post('handle-form', function() {
+	return request()->file('book')->getClientOriginalName(); 
+});
+
+Route::post('sample', function() {
+
+	return view('test');
+});
+
+Route::get('developer', function() {
+
+	return view('layouts.developer');
+});
+
 
 Route::resource('ancient', 'AncientController');
 
@@ -49,9 +66,12 @@ Route::post('/posts', function (Request $request) {
 }
 
 	);
+
+
+Route::get('trivia', 'TriviaController@index');
+Route::match(['get', 'post'],'/trivia/test', 'TriviaController@test');
 */
-
-
+Route::resource('trivia', 'TriviaController');
 Route::resource('stats', 'StatController');
 
 

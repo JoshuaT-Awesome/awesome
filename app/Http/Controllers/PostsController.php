@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Input;
 use Illuminate\Http\Request;
 use App\Post;
 
@@ -37,31 +38,62 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
-
+    public function store(Request $request)
     {
 /*
         if (request()->has('blog_image')) {
     request()->file('blog_image')->store('public');
 }
-*/
-            
+*/       
+
         $this->validate(request(),  [
 
-            'title' => 'required',
-            'body' => 'required'
-        ]);
+                'title' => 'required',
+                'body' => 'required', 
+                'file' => 'nullable',
+            ]);
 
 
-            // Create a new post using the request data
-        Post::create(request(['title', 'body' ]));
+        Post::create(request(['title', 'body', 'file']));
 
 
-        // Save it to the database
+        if (Input::hasFile('file'))
+        {    
+            /*
+            $file = Input::file('file');
+            $file->move(public_path() . '/images/', $file->getClientOriginalName() );
+            
+            
 
-        //  And then redirect to the home page.
+            $file = $request->file;
+            $path = $request->file->store('images');
+            $name = $file->getClientOriginalName();
+                $size = $file->getSize();
+                $mime = $file->getMimeType();
+                */
+             //$post->file = $file->getClientOriginalName();
+
+            /*
+            return [
+                'path'  =>  $file->getRealPath(),
+                'size'  =>  $file->getSize(),
+                'mime'  =>  $file->getMimeType(),
+                'name'  =>  $file->getClientOriginalName(),
+                'extenstion'    =>  $file->getClientOriginalExtension()
+            ];*/ 
+$file = $request->file('file');
+$fileExt = $file->guessClientExtension();
+$fileName = strtolower(str_replace(" ", "_", $request->input('file'))) . "_" . time();
+$name = $file->getClientOriginalName();
+$file->storeAs(
+    'public', $fileName.".".$fileExt
+);
+            dd($name);
+        }
+                    
+      
         return redirect('/posts');
-
+  
     }
 
     /**

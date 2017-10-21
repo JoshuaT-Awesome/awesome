@@ -1,47 +1,49 @@
-@extends('layouts.master')
+@extends ('layouts.master')
                     <li> <i class="fa-li fa fa-check-square"></i><a href="/">Home</a>
 
-@section('content')
+@section ('content')
+
 CREATE A NEW POST.
 
-<form method="POST" action="/posts" enctype="multipart/form-data">
+<!-- <form method="POST" action="/posts" enctype="multipart/form-data"> -->
+  {{ Form::open(array('url'=>'/posts','files'=>true)) }}
 
 	{{  csrf_field()  }}
 
-  <div class="form-group">
-
-    <label for="title">Title:</label>
-
-    <input type="text" class="form-control" id="title" name="title" >
-
-  </div>
+    <div class="form-group">
+      {{  Form::label('title', 'Title:')}}
+      {{  Form::text('title', null, ['class' => 'form-control'])  }}
+    </div>
 
 
-  <div class="form-group">
-
-    <label for="body">Body:</label>
-
-    <textarea id="body" class="form-control" name="body" ></textarea>
-
-  </div>
+    <div class="form-group">
+      {{  Form::label('body', 'Body:')}}
+      {{  Form::textarea('body', null, ['class' => 'form-control'])  }}
+    </div>
 
 
-  <div class="form-group">
+    <div class="form-group">
+      <!--  <label for="exampleInputFile">File input</label>
+      <input type="file" name="blog_image" id="exampleInputFile"> 
+      {{ Form::label('file','File',array('id'=>'','class'=>'')) }}
+      {{ Form::file('file','',array('id'=>'','class'=>'')) }}-->
+      {{ Form::label('file','File') }}
+      {{ Form::file('file','') }}
 
-    <label for="exampleInputFile">File input</label>
+      <p class="help-block">Example block-level help text here.</p>
+    </div>
 
-    <input type="file" name="blog_image" id="exampleInputFile">
+    <div class="form-group">
+       {{ Form::submit ('Save', ['class' => 'btn btn-primary']) }}
+       {{ Form::reset('Reset', ['class' => 'btn btn-secondary']) }}
+    </div>
 
-    <p class="help-block">Example block-level help text here.</p>
+  {{ Form::close() }}
 
-  </div>
+<!-- </form> -->
 
-  <div class="form-group">
-  	<button type="submit" class="btn btn-primary">Publish</button>
-  </div>
 
-</form>
- 
+ <br><br><br>
 	@include('layouts.errors')
 
 @endsection

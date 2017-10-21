@@ -5,27 +5,27 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title', 'Joshua T. Awesome')</title>
+        <title>@yield('title', 'title goes here')</title>
 
         <!-- Fonts -->
-        <!--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --!>
+        <!--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> -->
 
-        <!-- Latest compiled and minified CSS 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- Styles -->
         <link href="/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="css/app.css" rel="stylesheet" type="text/css">
-      <!-- Styles -->
-        
+         <script src="https://code.jquery.com/jquery-3.2.1.js"
+                 integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+                 crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">  
             <div class="content">
                 @yield('content')
             </div>
                @show
                <!-- @include('sidebar') -->
-        </div>
+       
          @include('footer')
     </body>
 </html>

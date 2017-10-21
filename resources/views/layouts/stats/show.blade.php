@@ -12,7 +12,8 @@ not sure.
 
 		
 			ID: {{ $stat->id}} <br>
-			Speed:{{$stat->speed}}<br><br>
+			Speed:{{$stat->speed}}<br>
+			Accuracy:{{$stat->accuracy}}<br><br>
 
 
 

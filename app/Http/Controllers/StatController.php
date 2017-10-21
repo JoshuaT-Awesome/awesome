@@ -66,6 +66,7 @@ class StatController extends Controller
         return $stats;
 */
         //Stat::find(wildcard)
+
          /*$foo = DB::table('stats')
          ->count();
 
@@ -81,15 +82,12 @@ class StatController extends Controller
                  */
          $stats = Stat::all();
 
-          
-
   
         //return view('layouts.stats.show', compact('stats'));
         return view('layouts.stats.show',  compact('stat'));
     }
  
 
-  
     /**
      * Show the form for editing the specified resource.
      *
@@ -104,6 +102,10 @@ class StatController extends Controller
         $speed = DB::table('stats')
         ->where('id', $id)
         ->increment('speed', 5);
+
+        $acc = DB::table('stats')
+        ->where('id', $id)
+        ->increment('accuracy', 5);
   
 
         // show the edit form and pass the id

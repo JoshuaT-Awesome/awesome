@@ -25,7 +25,7 @@
                 <a class="btn btn-small" href="{{ URL::to('stats/' . $value->id) }}">Show this User</a><br>
 
                 <!-- edit this user's stats (uses the edit method found at GET /stats/{id}/edit -->
-                <a class="btn btn-small" href="{{ URL::to('stats/' . $value->id . '/edit') }}">Add 5 to speed.</a><br><br>
+                <a class="btn btn-small" href="{{ URL::to('stats/' . $value->id . '/edit') }}">Add 5 to speed and accuracy.</a><br><br>
 
             </td>
         </tr>

@@ -13,7 +13,26 @@ class AncientController extends Controller
      */
     public function index()
     {
-        return view('layouts.ancient');
+
+
+        //BTC-e
+$url = "https://btc-e.com/api/2/btc_usd/ticker";
+$json = json_decode(file_get_contents($url), true);
+$price = $json["ticker"]["last"];
+echo $btc;
+
+//Bitstamp
+$url = "https://www.bitstamp.net/api/ticker/";
+$json = json_decode(file_get_contents($url), true);
+$price = $json["last"];
+echo $Bitstamp;
+
+//Coinbase
+$url = "https://coinbase.com/api/v1/prices/spot_rate";
+$json = json_decode(file_get_contents($url), true);
+$price = $json["amount"];
+echo $Coinbase;
+        return view('layouts.ancient', compact ('btc', 'Bitstamp', 'Coinbase'));
     }
 
     /**

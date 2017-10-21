@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Trivia;
 
 class TriviaController extends Controller
 {
@@ -13,7 +14,8 @@ class TriviaController extends Controller
      */
     public function index()
     {
-        return view('layouts.trivia');
+        $questions = Trivia::all();
+        return view('layouts.trivia.trivia', compact('questions'));
     }
 
     /**
@@ -23,7 +25,8 @@ class TriviaController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('layouts.trivia.create');
     }
 
     /**
@@ -32,9 +35,17 @@ class TriviaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $this->validate(request(),  [
+
+            'title' => 'required'
+        ]);
+
+
+        Trivia::create(request(['title', 'a', 'b', 'c', 'd', 'answer', 'image']));
+
+        return redirect('/trivia');
     }
 
     /**
@@ -80,5 +91,10 @@ class TriviaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function test() 
+    {
+        return view('layouts.trivia.test');
     }
 }
